@@ -1,0 +1,56 @@
+#include <iostream> 
+#include <iomanip>
+
+using namespace std;
+
+int main() {
+    //Deklarasi Variabel
+    int jumlah_apel, jumlah_pisang, jumlah_jeruk; 
+    double harga_buah[3] = {1000, 5000, 3000}, total_harga[3];
+    double total_akhir, bayar;
+    int jumlah_buah[3], i;
+    string nama_buah[3] = {"apel", "pisang", "jeruk"};
+    
+    cout << "-----------------\n";
+    cout << "Kasir Supermarket\n"; 
+    cout << "-----------------\n"; 
+    
+    
+    //Pengguna memasukan jumlah buah yang dibeli
+    
+    cout << "Berapa apel yang dibeli? \n";
+    cin >> jumlah_buah[0];
+    
+    cout << "Berapa pisang yang dibeli? \n";
+    cin >> jumlah_buah[1];
+    
+    cout << "Berapa jeruk yang dibeli? \n";
+    cin >> jumlah_buah[2];
+    cout << "\n";
+    
+    cout << "Struk Pembelian: \n";
+    cout << "---------------------------------\n";
+    cout << "No." << setw(8) << "Nama" << setw(10) << "Jumlah";
+        cout << setw(12) << "Total harga" << "\n";
+        
+    for(int i = 0; i <= 2; i++) {
+        total_harga[i] = harga_buah[i] * jumlah_buah[i];
+        
+        cout << i + 1 << setw(10) << nama_buah[i] << setw(12) << jumlah_buah[i];
+        cout << setw(10) << total_harga[i] << "\n";
+        
+        total_akhir += total_harga[i];
+    }
+    cout << "---------------------------------\n";
+    cout << "Biaya yang perlu dibayar: " << total_akhir << "\n";
+    cout << "Biaya yang diberikan: ";
+    cin >> bayar;
+    cout << "\n";
+    cout << "Kembali: ";
+    cout << bayar - total_akhir << "\n";
+    cout << "---------------------------------\n";
+    
+    cout << "Terima kasih telah berbelanja";
+    
+    
+}
